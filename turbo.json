@@ -3,6 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_SNIPPET_MANAGER_URL", "NEXT_PUBLIC_DOCS_URL"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
