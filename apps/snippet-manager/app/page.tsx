@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { MainMenu } from '@geniusgarage/ui/main-menu';
 import { Button } from '@geniusgarage/ui/button';
 import { SnippetCard } from '@geniusgarage/ui/snippet-card';
 import { formatDate } from '@geniusgarage/utils';
@@ -89,11 +90,20 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-8">
-      <div className="max-w-6xl mx-auto">
+    <main style={{ padding: '2rem', fontFamily: 'system-ui', maxWidth: '800px', margin: '0 auto' }}>
+      {/* Main Menu */}
+      <MainMenu selectedItem="snippets" />
+
+      {/* Main Content */}
+      <div style={{ textAlign: 'center', marginTop: '4rem' }}>
         {/* Add header div with flex layout */}
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold">My Snippets--</h1>
+        <div
+          className="flex justify-between items-center mb-8"
+          style={{
+            marginBottom: '2rem',
+          }}
+        >
+          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>👨🏻‍💻 My Snippets</h1>
           <Button onClick={() => setShowModal(true)}>+ New Snippet</Button>
         </div>
 
@@ -291,6 +301,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
